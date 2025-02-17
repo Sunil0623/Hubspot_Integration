@@ -58,13 +58,14 @@ cd VectorShift
 
 cd backend
 python -m venv venv
+
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+
 pip install -r requirements.txt
 
 3️⃣ Configure Environment Variables
 
 Use the credentials of Hubspot, Airtable and Notion in backend/ directory with the following data for all three:
-
 HUBSPOT_CLIENT_ID=your_client_id
 HUBSPOT_CLIENT_SECRET=your_client_secret
 HUBSPOT_REDIRECT_URI=http://localhost:8000/integrations/hubspot/oauth2callback
@@ -72,17 +73,22 @@ HUBSPOT_REDIRECT_URI=http://localhost:8000/integrations/hubspot/oauth2callback
 4️⃣ Frontend Setup
 
 cd frontend
+
 npm install
 
 5️⃣ Start Services
 
 # Start Redis Server
 redis-server
+
 # Start Backend
 cd backend
-uvicorn main:app --reload or python3 -m uvicorn main:app --reload
+
+uvicorn main:app --reload  or  python3 -m uvicorn main:app --reload
+
 # Start Frontend
 cd frontend
+
 npm start
 
 🔄 Integration Flow
